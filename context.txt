@@ -1,0 +1,81 @@
+Recetapp - Resumen para context.txt
+
+Descripción de la aplicación:
+
+Recetapp es una web app para gestionar y visualizar recetas de cocina de forma interactiva.
+Funcionalidades principales:
+Los usuarios pueden ver recetas individuales paso a paso, avanzando al siguiente paso al completar el actual.
+Hay una página dedicada para que los usuarios introduzcan nuevas recetas, incluyendo sus distintos pasos.
+La aplicación cuenta con un menú de navegación que tiene un logo a la izquierda y un botón "Añadir nueva" a la derecha.
+Los usuarios pueden ver un listado de recetas y, al hacer clic en una, navegar a la página detallada de esa receta.
+Tecnologías y herramientas:
+
+Frontend:
+React.js: para construir la interfaz de usuario.
+Material UI: para estilizar y utilizar componentes predefinidos.
+Backend y Base de Datos:
+Firebase con Firestore: para almacenar datos y manejar el backend.
+Estructura de datos en Firestore:
+
+Colección recipes:
+Cada documento representa una receta.
+Campos de cada receta:
+id: identificador único de la receta.
+name: nombre de la receta.
+description: descripción breve de la receta.
+createdAt: fecha y hora de creación.
+steps: array de objetos, cada uno representando un paso:
+id: identificador del paso.
+description: descripción del paso.
+order: número de orden del paso.
+Plan de desarrollo resumido:
+
+Configuración inicial:
+
+Crear el proyecto con Create React App:
+bash
+Copiar código
+npx create-react-app recetapp
+cd recetapp
+Instalar dependencias necesarias:
+bash
+Copiar código
+npm install @mui/material @emotion/react @emotion/styled firebase react-router-dom
+Configurar Firebase y Firestore:
+
+Crear un nuevo proyecto en la consola de Firebase.
+Añadir Firestore Database al proyecto.
+Configurar la aplicación web y obtener las credenciales.
+Crear un archivo firebase.js para inicializar Firebase y Firestore.
+Estructura de la aplicación:
+
+Configurar rutas utilizando React Router (react-router-dom):
+/ → Componente RecipeList (listado de recetas).
+/recipe/:id → Componente RecipeDetails (detalle de receta).
+/add → Componente AddRecipe (añadir nueva receta).
+Crear los componentes principales dentro de una carpeta pages:
+RecipeList.jsx
+RecipeDetails.jsx
+AddRecipe.jsx
+Implementar el menú de navegación:
+
+Utilizar el componente AppBar de Material UI.
+Colocar el logo a la izquierda y el botón "Añadir nueva" a la derecha.
+Desarrollar funcionalidades clave:
+
+RecipeList.jsx:
+Obtener y mostrar la lista de recetas desde Firestore.
+Cada receta debe permitir navegar a su detalle.
+RecipeDetails.jsx:
+Mostrar los pasos de la receta uno a uno.
+Incluir un botón "Siguiente" para avanzar entre pasos.
+AddRecipe.jsx:
+Formulario para introducir una nueva receta y sus pasos.
+Guardar la nueva receta en Firestore.
+Ejecución local:
+
+Iniciar el servidor de desarrollo:
+bash
+Copiar código
+npm start
+Acceder a la aplicación en el navegador: http://localhost:3000
