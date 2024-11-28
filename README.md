@@ -52,7 +52,7 @@ npm start
 
 # En la carpeta del servidor
 cd server
-npm start
+node index.js
 ```
 
 ### Resultado
